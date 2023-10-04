@@ -18,9 +18,8 @@ for (let i = 0; i < categories.length; i++) {
     
     cloneCard.querySelector('.card-title').textContent = categories[i];
     cloneCard.querySelector('.card-img img').setAttribute('alt', categories[i]);
-    cloneCard.querySelector('a').href = 'game.html?' + categories[i].toLowerCase();
 
     cardCategories.appendChild(cloneCard);
 }
 
-cardCategories.removeChild(card)
+cardCategories.removeChild(card);
