@@ -48,19 +48,6 @@ h2 {
     grid-template-columns: repeat(3, 1fr);
 }
 
-@media (max-width: 720px) {
-    .card-categories {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 380px) {
-    .card-categories {
-        grid-template-columns: repeat(1, 1fr);
-    }
-}
-
-
 .card-content {
     border: 2px solid #ccc;
     border-radius: 12px;
@@ -81,4 +68,25 @@ a {
 
 .card-img img {
     width: 100px;
+}
+
+.categories {
+    margin: 0 auto;
+}
+
+@media (max-width: 720px) {
+    .container {
+        width: 360px;
+    }
+
+    .card-categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .card-content {
+        width: 160px;
+        height: 140px;
+        margin: 10px 8px;
+        padding: 8px;
+    }
 }
