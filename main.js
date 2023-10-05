@@ -1,16 +1,16 @@
 const cardCategories = document.querySelector(".card-categories");
 const card = document.querySelector(".card");
-const cardImg = document.querySelector(".card-img img");
-const cardTitle = document.querySelector(".card-title");
 
 categories = [
     "Todo",
     "Acciones",
     "Objetos",
     "Comidas",
-    "Películas",
-    "Videojuegos",
-    "Mangas/Animes"
+    "Peliculas",
+    "Series",
+    "Juegos",
+    "Animes",
+    "Libros"
 ]
 
 for (let i = 0; i < categories.length; i++) {
@@ -18,6 +18,7 @@ for (let i = 0; i < categories.length; i++) {
     
     cloneCard.querySelector('.card-title').textContent = categories[i];
     cloneCard.querySelector('.card-img img').setAttribute('alt', categories[i]);
+    cloneCard.querySelector('.card-img img').setAttribute('src', "img/" + categories[i] + ".svg");
 
     cardCategories.appendChild(cloneCard);
 }
