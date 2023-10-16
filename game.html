@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pictionary - game</title>
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Estilos -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container container-game">
+      <h1>P I C T I O N A R Y</h1>
+      <hr />
+      <div class="configuration">
+        <img src="img/config.svg" alt="configuration" />
+      </div>
+      <div class="timer">60</div>
+
+      <div class="words">
+        <p class="category"></p>
+      </div>
+      <br />
+
+      <div class="buttons">
+        <button class="btn" onclick="timer()">Iniciar</button>
+        <button class="btn finish">Terminar</button>
+        <button class="btn" onclick="window.location.href = 'index.html';">
+          Volver
+        </button>
+      </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="game.js"></script>
+  </body>
+</html>
