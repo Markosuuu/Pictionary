@@ -17,22 +17,22 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <main class="container container-game">
+    <main class="container">
       <h1>P I C T I O N A R Y</h1>
       <hr />
       <div class="configuration">
         <img src="img/config.svg" alt="configuration" />
       </div>
+      <h2 class="category"></h2>      
       <div class="timer">60</div>
-
-      <div class="words">
-        <p class="category"></p>
+      <div>
+        <p class="word">...</p>
       </div>
       <br />
 
-      <div class="buttons">
-        <button class="btn" onclick="timer()">Iniciar</button>
-        <button class="btn finish">Terminar</button>
+      <div class="buttons-container">
+        <button class="btn start" onclick="timer()">Iniciar</button>
+        <button class="btn finish d-none">Terminar</button>
         <button class="btn" onclick="window.location.href = 'index.html';">
           Volver
         </button>

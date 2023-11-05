@@ -2,26 +2,21 @@
 CONFIGURACIÓN DE PARTIDA:
     - Tiempo
     - Equipos
-    - Si es TODO, Categorias ban
+    - Si es dentro de la categoría "TODO", Categorias para banear
     - Palabras custom
-
-SET EN PARTIDA
-    - Timer
-    - Lista de palabras de la categoría elegida
-    - Lista con las palabras que ya salieron así no se repiten
-    - Mensaje por si no quedan palabras de casualidad
 */
 
-const category = localStorage.getItem("dato");
+const category = localStorage.getItem("dato"); // Dato traido con localStorage
 
 if (!category) {
-  window.location.href = "index.html";
+  window.location.href = "index.html"; // Si el dato no existe, devuelve al index
 }
 
-document.querySelector(".words .category").textContent =
-  "Categoria: " + category;
+const startButton = document.querySelector(".start");
+const endButton = document.querySelector(".finish");
 
-document.querySelector(".finish").style.display = "none";
+document.querySelector(".category").textContent =
+  "Categoria: " + category;
 
 function timer() {
   const timerElement = document.querySelector(".timer");
@@ -33,18 +28,44 @@ function timer() {
     timerElement.textContent = sec - 1;
     sec--;
 
-    if (sec < 0) {
+    if (sec <= 0) {
       clearInterval(timer);
     }
   }, 1000);
 
-  document.querySelector(".finish").style.display = "block";
-  document.querySelector(".btn").style.display = "none";
+  startGame();
 
-  document.querySelector(".finish").addEventListener("click", () => {
+  startButton.classList.add("d-none");
+  endButton.classList.remove("d-none");
+
+  // Si endButton es presionado, termina el timer, lo reinicia y cambia el botón.
+  endButton.addEventListener("click", () => {
     clearInterval(timer);
     timerElement.textContent = "60";
-    document.querySelector(".finish").style.display = "none";
-    document.querySelector(".btn").style.display = "block";
+    endButton.classList.add("d-none");
+    startButton.classList.remove("d-none");
+  });
+}
+
+function startGame() {
+  const word = document.querySelector(".word");
+
+  let wordsList = ["Cantar", "Saltar", "Pelear", "Volar", "Caer"];
+
+  let randomWord =
+  wordsList[Math.floor(Math.random() * wordsList.length)]; // Toma un elemento al azar de la lista
+
+  word.textContent = randomWord;
+
+  /*
+    Quitar la palabra para que no se repita
+
+    Caso de que la lista se quede sin elementos
+
+    Lista personalizada para cada categoría
+  */
+
+  endButton.addEventListener("click", () => {
+    word.textContent = "...";
   });
 }
