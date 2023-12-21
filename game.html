@@ -20,9 +20,21 @@
     <main class="container">
       <h1>P I C T I O N A R Y</h1>
       <hr />
-      <div class="configuration">
+      
+      <button type="button" class="collapsible">
         <img src="img/config.svg" alt="configuration" />
+      </button>
+      <div class="content">
+        <form method="POST">
+          <label for="round-time">Tiempo de partida: </label>
+          <input type="range" class="form-range" min="0" max="5" id="round-time">
+          <span>30  45  60  75  90  120</span>
+          
+          <button class="btn" type="submit">Guardar</button>
+        </form>
       </div>
+      
+
       <h2 class="category"></h2>      
       <div class="timer">60</div>
       <div>

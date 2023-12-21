@@ -12,11 +12,29 @@ if (!category) {
   window.location.href = "index.html"; // Si el dato no existe, devuelve al index
 }
 
-const startButton = document.querySelector(".start");
-const endButton = document.querySelector(".finish");
-
 document.querySelector(".category").textContent =
   "Categoria: " + category;
+
+// Collapse configuration menu
+
+document.querySelector(".collapsible").addEventListener("click", function() {
+  this.classList.toggle("active");
+  
+  const content = this.nextElementSibling;
+  
+  if (content.style.maxHeight){
+    content.style.maxHeight = null;
+    content.style.padding = null;
+  } else {
+    content.style.maxHeight = content.scrollHeight + "px";
+    content.style.padding = "10px 18px";
+  }
+});
+
+// Timer button
+
+const startButton = document.querySelector(".start");
+const endButton = startButton.nextElementSibling;
 
 function timer() {
   const timerElement = document.querySelector(".timer");
@@ -46,6 +64,8 @@ function timer() {
     startButton.classList.remove("d-none");
   });
 }
+
+// Random word for the game
 
 function startGame() {
   const word = document.querySelector(".word");

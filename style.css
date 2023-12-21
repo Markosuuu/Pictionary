@@ -77,16 +77,32 @@ img {
 
 /* game.html styles */
 
-.configuration {
+.collapsible {
+  background: #b8f0b2;
+  cursor: pointer;
   width: 60px;
   height: 60px;
   margin-top: 15px;
   margin-bottom: 15px;
+  border: none;
   border-radius: 12px;
-  background: #b8f0b2;
 }
 
-.configuration img {
+.active, .collapsible:hover {
+  background-color: #a6d8a0;
+}
+
+.content {
+  background-color: #99db92b0;
+  color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+}
+
+/* --------------- */
+
+.collapsible img {
   width: 50px;
   margin: 5px;
 }
@@ -203,3 +219,104 @@ img {
     font-size: 30px;
   }
 }
+
+.form-range {
+  height: 33px;
+  -webkit-appearance: none;
+  margin: 10px 0;
+  width: 100%;
+  background: none;
+}
+
+.form-range:focus {
+  outline: none;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 14px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000;
+  background: #2b8121;
+  border-radius: 4px;
+  border: 1px solid #010101;
+}
+
+.form-range::-webkit-slider-thumb {
+  box-shadow: 0px 0px 0px #000031;
+  border: 1px solid #1B161E;
+  height: 26px;
+  width: 26px;
+  border-radius: 15px;
+  background: #FFFFFF;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+
+.form-range:focus::-webkit-slider-runnable-track {
+  background: #2b8121;
+}
+
+.form-range::-moz-range-track {
+  width: 100%;
+  height: 14px;
+  cursor: pointer;
+  box-shadow: 0px 0px 0px #000000;
+  background: #2b8121;
+  border-radius: 4px;
+  border: 1px solid #010101;
+}
+
+.form-range::-moz-range-thumb {
+  box-shadow: 0px 0px 0px #000031;
+  border: 1px solid #1B161E;
+  height: 26px;
+  width: 26px;
+  border-radius: 15px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+.form-range::-ms-track {
+  width: 100%;
+  height: 14px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.form-range::-ms-fill-lower {
+  background: #2b8121;
+  border: 1px solid #010101;
+  border-radius: 8px;
+  box-shadow: 0px 0px 0px #000000;
+}
+
+.form-range::-ms-fill-upper {
+  background: #2b8121;
+  border: 1px solid #010101;
+  border-radius: 8px;
+  box-shadow: 0px 0px 0px #000000;
+}
+
+.form-range::-ms-thumb {
+  margin-top: 1px;
+  box-shadow: 0px 0px 0px #000031;
+  border: 1px solid #1B161E;
+  height: 26px;
+  width: 26px;
+  border-radius: 15px;
+  background: #FFFFFF;
+  cursor: pointer;
+}
+
+.form-range:focus::-ms-fill-lower {
+  background: #2b8121;
+}
+
+.form-range:focus::-ms-fill-upper {
+  background: #2b8121;
+}
+
